@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.hoony.msa.springboot.repository.ICoffeeStatusMapper">
+	<update id="createStatusTable" parameterType="com.hoony.msa.springboot.repository.dvo.OrderStatusDVO">
+		create table coffee_order_status(
+			   id int primary key
+			 , order_history varchar(300)
+		 )
+	</update>
+	<insert id="insertCoffeeOrderStatus" parameterType="com.hoony.msa.springboot.repository.dvo.OrderStatusDVO">
+	 	insert into coffee_order_status values (
+	 	    1
+	 	   ,#{orderHistory}
+	 	)
+	</insert>
+	
+	<select id="selectCoffeeOrderStatus" parameterType="com.hoony.msa.springboot.repository.dvo.OrderStatusDVO"
+										resultType="com.hoony.msa.springboot.repository.dvo.OrderStatusDVO">
+	 	select id, order_history from coffee_order_status  
+	</select>
+</mapper>

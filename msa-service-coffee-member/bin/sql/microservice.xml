@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.hoony.msa.springboot.repository.ICoffeeMemberMapper">
+	<update id="createMemberTable" parameterType="com.hoony.msa.springboot.repository.dvo.MemberDVO">
+		create table member(id varchar(200) primary key, member_name varchar(20))
+	</update>
+	<insert id="insertMemberData" parameterType="com.hoony.msa.springboot.repository.dvo.MemberDVO">
+	 	insert into member values (1, 'kevin')
+	</insert>
+	<select id="existsByMemberName" parameterType="com.hoony.msa.springboot.repository.dvo.MemberDVO" 
+	                                resultType="com.hoony.msa.springboot.repository.dvo.MemberDVO">
+		select * from member where member_name = #{memberName}
+	</select>
+</mapper>
