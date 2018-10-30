@@ -48,8 +48,8 @@ subprojects {
 	}
 
 	dependencies {
-		compile('org.projectlombok:lombok:1.18.0')
-		compile('org.projectlombok:lombok-utils:1.18.0')
+		compile('org.projectlombok:lombok:1.18.4')
+		compile('org.projectlombok:lombok-utils:1.18.4')
 		compile('junit:junit:4.12')
 		
 		testCompile("org.springframework.boot:spring-boot-starter-test")
